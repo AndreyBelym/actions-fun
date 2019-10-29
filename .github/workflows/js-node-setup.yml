@@ -1,0 +1,19 @@
+name: TestCafe Matrix Nodes Workflow
+on: [push]
+
+jobs:
+  build:
+    name: TestCafe Matrix Nodes Job
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        node: [8, 10, 12]
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: actions/checkout@v1
+      - name: Run testcafe tests
+        uses: AlexKamaev/testcafe-action@v0.0.1-alpha.1
+        with:
+          testCafeArguments: "chrome tests"
