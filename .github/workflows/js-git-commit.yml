@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Run testcafe from specified commit
-        uses: AlexKamaev/testcafe-action@master
+        uses: AlexKamaev/testcafe-action@v0.0.1-alpha.2
         with:
           branch: master
           commit: ad43ce086573d9da15a813690e992ed560246f59

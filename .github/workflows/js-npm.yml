@@ -8,6 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Run testcafe from 'npm'
-        uses: AlexKamaev/testcafe-action@v0.0.1-alpha.1
+        uses: AlexKamaev/testcafe-action@v0.0.1-alpha.2
         with:
           args: "chrome tests"
