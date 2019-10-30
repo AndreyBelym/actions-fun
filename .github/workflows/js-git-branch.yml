@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
   build:
-    name: TestCafe Git Job
+    name: TestCafe Git Branch
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v1

@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
   build:
-    name: TestCafe Matrix Nodes Job
+    name: TestCafe Matrix Nodes
     runs-on: windows-latest
     strategy:
       matrix:
