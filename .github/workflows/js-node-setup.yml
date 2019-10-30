@@ -14,6 +14,6 @@ jobs:
           node-version: ${{ matrix.node }}
       - uses: actions/checkout@v1
       - name: Run testcafe tests
-        uses: AlexKamaev/testcafe-action@v0.0.1-alpha.1
+        uses: AlexKamaev/testcafe-action@master
         with:
-          testCafeArguments: "chrome tests"
+          args: "chrome tests"
