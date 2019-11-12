@@ -1,0 +1,20 @@
+name: Use Matrix Strategy to Test in Several Node.js Versions
+on: [push]
+
+jobs:
+  build:
+    name: Run Tests With Several Node.js Versions
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [8, 10, 12]
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: actions/checkout@v1
+      - name: Run TestCafe Tests
+        uses: DevExpress/testcafe-action
+        with:
+          args: "chrome tests"
