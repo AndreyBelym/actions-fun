@@ -1,0 +1,21 @@
+name: End-to-End Tests
+on: [push]
+
+jobs:
+  build:
+    name: '${{ matrix.os }} node ${{ matrix.node }}'
+    runs-on: '${{ matrix.os }}'
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [12, 10]
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: actions/checkout@v1
+      - run: npm ci
+      - name: Run TestCafe Tests
+        uses: DevExpress/testcafe-action@latest
+        with:
+          args: 'chrome tests/testcafe'
