@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "testcafe": "1.8.3",
-    "testcafe-react-selectors": *,
+    "testcafe-react-selectors": "*",
     "match-url-wildcard": "0.0.4"
   }
 }
